@@ -34,6 +34,7 @@ header = """<?xml version="1.0" encoding="utf-8"?>
     As a service to the community, the AAS is compiling a list of
     live-streamed astronomy presentations and events --
     both those intended for professional astronomers and those intended for a wider audience.
+    Code for this is maintained on https://github.com/teuben/LiveStreamedAstronomy
 
 
   </description>
