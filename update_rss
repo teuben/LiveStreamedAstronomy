@@ -1,0 +1,28 @@
+#! /bin/bash
+#
+#  update the RSS feed, if there is something new
+#  1) download the tsv (manually) from
+#     https://docs.google.com/spreadsheets/d/1I93v-KdhqzmqhI0dTYnbpD5I9LKyYgYqGx4uyL5DbuE/edit#gid=950245354
+#  2) run this script
+#
+
+tsv="$HOME/Downloads/Live-Streamed Astronomy Presentations & Events (Responses) - Form Responses 1.tsv"
+xml=rss4.xml
+url=chara.astro.umd.edu:public_html/aas
+
+if [ ! -e "$tsv" ]; then
+    echo No new $tsv
+    exit 0
+else
+    echo Found a new tsv
+fi
+
+mv "$tsv" .
+cp $xml  $xml.prev
+./tsv2xml.py  > $xml
+diff $xml $xml.prev
+if test $? = 1; then
+    scp $xml $url
+else
+    echo No changes for $xml found
+fi
