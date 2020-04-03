@@ -1,5 +1,6 @@
 # LiveStreamedAstronomy
-processing the LiveStreamedAstronomy for RSS
+
+### processing the LiveStreamedAstronomy for RSS
 
 This currently converts the tsv file that has to be manually downloaded into an rss xml file.
 Created in March 2020 because of the large interest from the community to make talks available.
