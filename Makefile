@@ -5,3 +5,6 @@
 all:
 	./update_rss
 
+
+redo:
+	cp Live-* ~/Downloads
